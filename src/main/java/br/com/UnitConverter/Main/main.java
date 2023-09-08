@@ -10,7 +10,9 @@ public class main {
         CreateParameter createParameter = new CreateParameter();
         TemperatureConverter temperatureConverter = new TemperatureConverter();
 
-        temperatureConverter.fromCelsiusToFahrenheit();
-        temperatureConverter.fromFahrenheitToCelsius();
+//        temperatureConverter.fromCelsiusToFahrenheit();
+//        temperatureConverter.fromFahrenheitToCelsius();
+
+        temperatureConverter.toConvert((value * 1.8) + 32 ,"the value in fahrenheit: ");
     }
 }
