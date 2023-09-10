@@ -2,17 +2,41 @@ package br.com.UnitConverter.Main;
 
 import br.com.UnitConverter.Conversor.TemperatureConverter;
 import br.com.UnitConverter.Functions.CreateParameter;
+import br.com.UnitConverter.Functions.Style;
 
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class main {
     public static void main(String[] args) {
+        Style style = new Style();
         CreateParameter createParameter = new CreateParameter();
-        TemperatureConverter temperatureConverter = new TemperatureConverter();
 
-//        temperatureConverter.fromCelsiusToFahrenheit();
-//        temperatureConverter.fromFahrenheitToCelsius();
 
-        temperatureConverter.toConvert((value * 1.8) + 32 ,"the value in fahrenheit: ");
+        while (true) {
+
+            style.createMenuMain(50);
+            int option = createParameter.createInt("Option:");
+            switch (option) {
+
+                case 1:
+
+                    break;
+
+                case 2:
+                    MainLength.main(null);
+                    break;
+
+                case 3:
+                    break;
+                case 4:
+                    System.out.println("Exit of the system bye. :)");
+                    return;
+            }
+
+
+        }
+
+
     }
 }

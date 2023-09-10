@@ -6,10 +6,6 @@ public class TemperatureConverter {
 
     private CreateParameter createParameter = new CreateParameter();
 
-    public TemperatureConverter(String conversionMessage) {
-        double value = createParameter.createDouble(conversionMessage);
-    }
-
 
     public void fromCelsiusToFahrenheit() {
 
@@ -34,12 +30,10 @@ public class TemperatureConverter {
         System.out.println("the value in Kelvin: " + kelvin + " F");
     }
 
-    public void toConvert( double calculation, String resultMessage) {
-
-
-//        calculation = (value * 1.8) + 32;
-        System.out.println(resultMessage + calculation);
-
-
+    public void fromKelvinToCelsius() {
+        double kelvin = createParameter.createDouble("Type the value in Kelvin(K) to convert for celsius(C°) : ");
+        double celsius = kelvin - 273.15;
+        System.out.println("the value in Kelvin: " + celsius + " F");
     }
+
 }
