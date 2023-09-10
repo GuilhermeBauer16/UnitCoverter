@@ -6,34 +6,38 @@ public class TemperatureConverter {
 
     private CreateParameter createParameter = new CreateParameter();
 
+    // celsius
+    public double fromCelsiusToFahrenheit(double celsius) {
+        return (celsius * 1.8) + 32;
+    }
 
-    public void fromCelsiusToFahrenheit() {
+    public double fromCelsiusToKelvin(double celsius) {
 
-        double celsius = createParameter.createDouble("Type the value in celsius(C°) to convert for Fahrenheit(F): ");
-        double fahrenheit = (celsius * 1.8) + 32;
-        System.out.println("the value in fahrenheit: " + fahrenheit + " C°");
-
+        return celsius + 273.15;
 
     }
 
-    public void fromFahrenheitToCelsius() {
+    // fahrenheit
+    public double fromFahrenheitToCelsius(double fahrenheit) {
 
-        double fahrenheit = createParameter.createDouble("Type the value in Fahrenheit(F) to convert for celsius(C°): ");
-        double celsius = (fahrenheit - 32) / 1.8;
-        System.out.println("the value in celsius: " + celsius + " F");
+        return (fahrenheit - 32) / 1.8;
 
     }
 
-    public void fromCelsiusToKelvin() {
-        double celsius = createParameter.createDouble("Type the value in celsius(C°) to convert for Kelvin(K) : ");
-        double kelvin = celsius + 273.15;
-        System.out.println("the value in Kelvin: " + kelvin + " F");
+    public  double fromFahrenheitToKelvin(double fahrenheit){
+
+        return ((fahrenheit - 32 ) * 5/9) + 273.15;
     }
 
-    public void fromKelvinToCelsius() {
-        double kelvin = createParameter.createDouble("Type the value in Kelvin(K) to convert for celsius(C°) : ");
-        double celsius = kelvin - 273.15;
-        System.out.println("the value in Kelvin: " + celsius + " F");
+    // kelvin
+    public double fromKelvinToCelsius(double kelvin) {
+
+        return kelvin - 273.15;
+
+    }
+
+    public double fromKelvinToFahrenheit(double kelvin){
+        return (kelvin - 273.15) * 1.8 + 32 ;
     }
 
 }

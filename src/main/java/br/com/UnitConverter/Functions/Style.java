@@ -27,6 +27,32 @@ public class Style {
 
     }
 
+    public void createMenuWeight(int number){
+        System.out.println(title("Weight converter ", number));
+        System.out.println("[1]From pounds to kilogram ");
+        System.out.println("[2]From pounds to grams ");
+        System.out.println("[3]From kilogram to pounds");
+        System.out.println("[4]From kilogram to grams ");
+        System.out.println("[5]From grams to pounds ");
+        System.out.println("[6]From grams to kilograms ");
+        System.out.println("[7]Exit ");
+        System.out.println(line(number));
+
+    }
+
+    public void createMenuTemperatureConverter(int number){
+        System.out.println(title("Temperature converter ", number));
+        System.out.println("[1]From celsius to fahrenheit ");
+        System.out.println("[2]From celsius to kelvin ");
+        System.out.println("[3]From fahrenheit to celsius");
+        System.out.println("[4]From fahrenheit to kelvin ");
+        System.out.println("[5]From kelvin to celsius ");
+        System.out.println("[6]From kelvin to fahrenheit ");
+        System.out.println("[7]Exit ");
+        System.out.println(line(number));
+
+    }
+
     public String title(String message, int number) {
         String line = "==".repeat(number);
         return line + "\n" + message + "\n" + line;

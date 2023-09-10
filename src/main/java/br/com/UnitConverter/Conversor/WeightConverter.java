@@ -1,6 +1,6 @@
 package br.com.UnitConverter.Conversor;
 
-public class Weight {
+public class WeightConverter {
 
     // Pounds
     public double fromPoundsToKilogram(double pounds){

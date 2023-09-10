@@ -4,57 +4,66 @@ import br.com.UnitConverter.Conversor.LengthConverter;
 import br.com.UnitConverter.Functions.CreateParameter;
 import br.com.UnitConverter.Functions.Style;
 
-public class MainLength {
-//    System.out.println(title("Length converter ", number));
-//        System.out.println("[1]From kilometer to meter ");
-//        System.out.println("[2]From kilometer to centimeter ");
-//        System.out.println("[3]From meter to kilometer");
-//        System.out.println("[4]From meter to centimeter ");
-//        System.out.println("[5]From centimeter to kilometer ");
-//        System.out.println("[6]From centimeter to meter ");
-//        System.out.println("[7]Exit ");
-    public static void main(String[] args) {
+import java.text.DecimalFormat;
 
+public class MainLength {
+
+    public static void main(String[] args) throws InterruptedException {
+
+        double valueToConvert = 0.0;
+        DecimalFormat decimalFormat = new DecimalFormat("0.#");
         Style style = new Style();
         CreateParameter createParameter = new CreateParameter();
         LengthConverter lengthConverter = new LengthConverter();
 
+        while (true){
+
         style.createMenuLength(50);
         int option = createParameter.createInt("option: ");
-        double valueToConvert = createParameter.createDouble("Value to convert: ");
+            if (option >= 1 && option <= 6) {
+
+                valueToConvert = createParameter.createDouble("Insert the value for convert: ");
+            }
+
         switch (option){
 
             case 1:
-                System.out.println(lengthConverter.fromKilometerToMeter(valueToConvert));
+                System.out.println(decimalFormat.format(lengthConverter.fromKilometerToMeter(valueToConvert))  +" M");
+                Thread.sleep(1500);
                 break;
 
             case 2:
-                System.out.println(lengthConverter.fromKilometerToCentimeter(valueToConvert));
+                System.out.println(decimalFormat.format(lengthConverter.fromKilometerToCentimeter(valueToConvert )) +" CM");
+                Thread.sleep(1500);
                 break;
 
             case 3:
-                System.out.println(lengthConverter.fromMeterToKilometer(valueToConvert));
+                System.out.println(decimalFormat.format(lengthConverter.fromMeterToKilometer(valueToConvert)) + " KM");
+                Thread.sleep(1500);
                 break;
 
             case 4:
-                System.out.println(lengthConverter.fromMeterToCentimeter(valueToConvert));
+                System.out.println(decimalFormat.format(lengthConverter.fromMeterToCentimeter(valueToConvert))+" CM");
+                Thread.sleep(1500);
                 break;
 
             case 5:
-                System.out.println(lengthConverter.fromCentimeterToKilometer(valueToConvert));
+                System.out.println(decimalFormat.format(lengthConverter.fromCentimeterToKilometer(valueToConvert))+ " KM");
+                Thread.sleep(1500);
                 break;
 
             case 6:
-                System.out.println(lengthConverter.fromCentimeterToMeter(valueToConvert));
+                System.out.println(decimalFormat.format(lengthConverter.fromCentimeterToMeter(valueToConvert))+" M");
+                Thread.sleep(1500);
                 break;
 
             case 7:
                 System.out.println("Return to menu");
-                break;
+                return;
 
             default:
                 System.out.println("Invalid option");
 
         }
     }
-}
+}}
